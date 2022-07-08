@@ -1,0 +1,24 @@
+#
+# Maintainer: Mahmoud Mohamed (Ozil) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=exodia-calamares
+destname="/etc"
+pkgver=1
+pkgrel=1
+pkgdesc="Calamares config for Exodia OS"
+arch=('any')
+url="https://github.com/Exodia-OS/exodia-calamares.git"
+license=('GPL3')
+makedepends=('git')
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(git+${url})
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${destname}
+	cp -r ${srcdir}/${pkgname}${destname}/* ${pkgdir}${destname}
+	chmod 755 ${pkgdir}/etc/calamares/launch.sh
+}
