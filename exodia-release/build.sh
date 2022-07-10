@@ -11,7 +11,7 @@ echo "# Making the package...... #"
 echo "############################"
 echo ""
 
-makepkg -sc --noconfirm
+makepkg -s --noconfirm
 
 echo ""
 echo "####################"
