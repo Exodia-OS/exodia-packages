@@ -26,7 +26,7 @@ BUILDPKG () {
 	echo -e "\nBuilding Package...... \n"
 	makepkg -s -f
 	
-    rm -rf src pkg
+    rm -rf src pkg vimrc
 }
 
 # Execute
