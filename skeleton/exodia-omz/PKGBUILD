@@ -4,7 +4,7 @@
 
 pkgname=exodia-omz
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A community-driven framework for managing your zsh configuration."
 arch=('any')
 url='https://github.com/ohmyzsh/ohmyzsh'
@@ -24,10 +24,15 @@ sha256sums=('SKIP')
 prepare() {
   	cd ${srcdir}/oh-my-zsh
 
-	# Copy ExodiaOS zsh themes
+	# Copy Exodia OS zsh themes #
 	cp ../../archcraft.zsh-theme ${srcdir}/oh-my-zsh/custom/themes
 	cp -r ../../spaceship-prompt ${srcdir}/oh-my-zsh/custom/themes
 	cp -r ../../powerlevel10k    ${srcdir}/oh-my-zsh/custom/themes
+
+	# Copy Exodia OS zsh plugins #
+	cp -r ../../example                   ${srcdir}/oh-my-zsh/custom/plugins
+	cp -r ../../zsh-autosuggestions       ${srcdir}/oh-my-zsh/custom/plugins
+	cp -r ../../zsh-syntax-highlighting   ${srcdir}/oh-my-zsh/custom/plugins
 
 	cd ${srcdir}/oh-my-zsh/custom/themes
 	ln -s spaceship-prompt/spaceship.zsh-theme spaceship.zsh-theme
