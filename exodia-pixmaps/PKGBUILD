@@ -1,0 +1,28 @@
+#
+# Maintainer: Mahmoud Mohamed (Ozil) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=exodia-pixmaps
+pkgver=1.0
+pkgrel=1
+pkgdesc="Icons & logo for Exodia OS"
+url="https://github.com/Exodia-OS/exodia-PKGBUILDs"
+arch=('any')
+license=('GPL3')
+makedepends=()
+groups=('exodia-artworks')
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../pixmaps/. ${srcdir}
+}
+
+package() {
+	(find pixmaps -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/{}" \;)
+	(find dunst -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/archcraft/icons/{}" \;)
+}
+
+
