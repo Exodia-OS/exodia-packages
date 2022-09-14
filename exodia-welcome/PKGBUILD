@@ -4,13 +4,14 @@
 
 pkgname=exodia-welcome
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Welcome app for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
 license=('GPL3')
 makedepends=()
 depends=('yad')
+groups=('exodia-apps')
 conflicts=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
