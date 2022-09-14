@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Exodia Help
+Comment=Help for Exodia OS
+Exec=exodia-help
+Icon=exodia
+Type=Application
+Categories=System;
