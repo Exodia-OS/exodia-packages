@@ -6,7 +6,7 @@ pkgname="exodia-hooks"
 pkgver=1.0
 pkgrel=1
 pkgdesc='Pacman hooks for Exodia OS to fix various system files'
-url="https://github.com/Exodia-OS/exodia-PKGBUILDs"
+url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
 license=('GPL3')
 
