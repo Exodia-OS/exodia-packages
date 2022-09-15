@@ -1,0 +1,77 @@
+# SPDX-FileCopyrightText: no
+# SPDX-License-Identifier: CC0-1.0
+#
+## Distribution Branding Settings
+
+---
+componentName:  exodia
+
+## Show "Welcome to the Calamares installer for Exodia OS." instead?
+welcomeStyleCalamares:   false
+
+## Should the welcome image be scaled up beyond its natural size?
+welcomeExpandingLogo:   true
+
+## Should the calamares window expand?
+# Size and expansion policy for Calamares.
+#  - "normal" or unset, expand as needed, use *windowSize*
+#  - "fullscreen", start as large as possible, ignore *windowSize*
+#  - "noexpand", don't expand automatically, use *windowSize*
+windowExpanding:    noexpand
+
+## Size of Calamares window, expressed as w,h. (px, em)
+windowSize: 800px,600px
+
+## Placement of Calamares window. Either "center" or "free".
+windowPlacement: center
+
+## Sidebar Style (widget, qml, none)
+sidebar: widget
+
+## Navigation Style, buttons on the bottom (widget, qml, none)
+navigation: widget
+
+## Strings
+strings:
+    productName:         Exodia OS
+    shortProductName:    Exodia
+    #version:             2022.07
+    #shortVersion:        22.07
+    versionedName:       Exodia OS
+    shortVersionedName:  Exodia
+    bootloaderEntryName: Exodia OS
+    productUrl:          https://exodia-os.github.io/exodia-website/
+    supportUrl:          https://github.com/Exodia-OS/exodia-home-ISO
+    knownIssuesUrl:      https://github.com/Exodia-OS/exodia-home-ISO/issues
+    releaseNotesUrl:     https://github.com/Exodia-OS/exodia-releases
+    donateUrl:           https://exodia-os.github.io/exodia-website/
+
+## Images
+# productBanner : On top of welcome text (64x460)
+# productIcon : Icon on titlebar (16x16)
+# productLogo : Logo in sidebar (80x80)
+# productWallpaper : Replace the solid color in main window (800x520)
+# productWelcome : In the middle of main window on welcome (320x150)
+images:
+    #productBanner:       "banner.png"
+    productIcon:         "exodia.png"
+    productLogo:         "exodia.png"
+    #productWallpaper:    "wallpaper.png"
+    productWelcome:      "welcome.png"
+
+## Colors for text and background components in sidebar only.
+style:
+   sidebarBackground:    "#353945"
+   sidebarText:          "#EFF0F1"
+   sidebarTextSelect:    "#FFFFFF"
+   sidebarTextHighlight: "#5294E2"
+
+## Slideshow
+slideshow:               "show.qml"
+slideshowAPI: 2
+
+## Upload the logs to pastebins:
+uploadServer :
+    type :    "fiche"
+    url :     "http://termbin.com:9999"
+    sizeLimit : -1

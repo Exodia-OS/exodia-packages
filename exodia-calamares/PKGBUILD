@@ -3,22 +3,29 @@
 #
 
 pkgname=exodia-calamares
-destname="/etc"
-pkgver=1
+pkgver=1.0
 pkgrel=1
-pkgdesc="Calamares config for Exodia OS"
+pkgdesc="Calamares configuration for Exodia OS."
+url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
-url="https://github.com/Exodia-OS/exodia-calamares.git"
-license=('GPL3')
-makedepends=('git')
-depends=()
-conflicts=()
-provides=("${pkgname}")
-options=(!strip !emptydirs)
-source=(git+${url})
-sha256sums=('SKIP')
-package() {
-	install -dm755 ${pkgdir}${destname}
-	cp -r ${srcdir}/${pkgname}${destname}/* ${pkgdir}${destname}
-	chmod 755 ${pkgdir}/etc/calamares/launch.sh
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+# depends=('calamares')
+
+prepare() {
+	cp -af ../files/. ${srcdir}
 }
+
+package() {
+
+	# copy all files recursively in /etc/calamares
+	(find calamares -type f -exec install -Dm 644 "{}" "$pkgdir/etc/{}" \;)
+	# make scripts executable
+	chmod 755 "$pkgdir"/etc/calamares/launch.sh
+	chmod 755 "$pkgdir"/etc/calamares/branding/exodia/test-slides.sh
+
+}
+
+
+
