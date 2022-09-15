@@ -1,0 +1,30 @@
+#
+# Maintainer: Mahmoud Mohamed (Ozil) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=exodia-grub-theme
+pkgver=1.0
+pkgrel=1
+pkgdesc="Default grub2 bootloader theme for Exodia OS"
+url="https://github.com/Exodia-OS/exodia-packages"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=('grub')
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+
+	cp -af ../files/. ${srcdir}
+	
+}
+
+package() {
+	
+	(find exodia -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/grub/themes/{}" \;)
+
+}
+
+
