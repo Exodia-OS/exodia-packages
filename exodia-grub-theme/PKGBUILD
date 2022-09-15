@@ -4,7 +4,7 @@
 
 pkgname=exodia-grub-theme
 pkgver=1.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Default grub2 bootloader theme for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
