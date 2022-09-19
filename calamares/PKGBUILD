@@ -2,8 +2,6 @@
 # Maintainer: Mahmoud Mohamed (Ozil) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
 #
 
-#https://github.com/calamares/calamares/releases
-
 pkgname=calamares
 _pkgname=calamares
 pkgver=3.2.61
