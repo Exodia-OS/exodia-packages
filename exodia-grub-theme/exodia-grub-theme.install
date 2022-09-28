@@ -32,14 +32,3 @@ post_install() {
 	echo -e ${BGreen}"[*] Configuration files installed successfully!\n" ${Color_Off}
 
 }
-
-post_upgrade() {
-
-	echo -e ${BRed}"[*] Updating exodia-grub-theme... \n" ${Color_Off}
-
-	sudo sed -i -e "s|#GRUB_THEME=.*|GRUB_THEME=\"/boot/grub/themes/exodia/theme.txt\"|g" /etc/default/grub
-	sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-	echo -e ${BGreen}"[*] Configuration files updated successfully!\n" ${Color_Off}
-
-}
