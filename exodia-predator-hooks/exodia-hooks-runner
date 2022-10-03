@@ -1,0 +1,73 @@
+#!/bin/bash
+
+##########################################################################################################
+#																										 
+#    Copyright © 2022 To Cyb3rTh1eveZ																	 
+#																										 
+#     ██████╗██╗   ██╗██████╗ ██████╗ ██████╗ ████████╗██╗  ██╗ ██╗███████╗██╗   ██╗███████╗███████╗	 
+#    ██╔════╝╚██╗ ██╔╝██╔══██╗╚════██╗██╔══██╗╚══██╔══╝██║  ██║███║██╔════╝██║   ██║██╔════╝╚══███╔╝     
+#    ██║      ╚████╔╝ ██████╔╝ █████╔╝██████╔╝   ██║   ███████║╚██║█████╗  ██║   ██║█████╗    ███╔╝      
+#    ██║       ╚██╔╝  ██╔══██╗ ╚═══██╗██╔══██╗   ██║   ██╔══██║ ██║██╔══╝  ╚██╗ ██╔╝██╔══╝   ███╔╝       
+#    ╚██████╗   ██║   ██████╔╝██████╔╝██║  ██║   ██║   ██║  ██║ ██║███████╗ ╚████╔╝ ███████╗███████╗     
+#     ╚═════╝   ╚═╝   ╚═════╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═╝╚══════╝  ╚═══╝  ╚══════╝╚══════╝     
+#																										 
+#																										 
+#																										 
+#    Copyright (C) Mahmoud Mohamed (Ozil)  <https://github.com/mmsaeed509>								 
+#    LICENSE © GNU-GPL3																					 
+#																										 
+##########################################################################################################
+
+# Run `exodia-hooks` related commands. #
+
+fix_lsb_release() {
+    local file=/etc/lsb-release
+
+    if [[ -z "`grep "^DISTRIB_RELEASE=" $file`" ]] ; then
+        # add missing DISTRIB_RELEASE=
+        echo "DISTRIB_RELEASE=rolling" >> "$file"
+    fi
+    sed -i "$file" \
+        -e 's|^DISTRIB_ID=.*$|DISTRIB_ID=exodia-predator|' \
+        -e 's|^DISTRIB_RELEASE=.*$|DISTRIB_RELEASE=rolling|' \
+        -e 's|^DISTRIB_DESCRIPTION=.*$|DISTRIB_DESCRIPTION=\"Exodia Predator OS\"|'
+}
+
+fix_os_release() {
+    local file=/usr/lib/os-release
+
+    sed -i "$file" \
+        -e 's|^NAME=.*$|NAME=\"Exodia Predator OS\"|' \
+        -e 's|^PRETTY_NAME=.*$|PRETTY_NAME=\"Exodia Predator OS\"|' \
+        -e 's|^ID=.*$|ID=exodia-predator|' \
+        -e 's|^ID_LIKE=.*$|ID_LIKE=arch|' \
+        -e 's|^BUILD_ID=.*$|BUILD_ID=rolling|' \
+        -e 's|^HOME_URL=.*$|HOME_URL=\"https://exodia-os.github.io/exodia-website\"|' \
+        -e 's|^DOCUMENTATION_URL=.*$|DOCUMENTATION_URL=\"https://exodia-os.github.io/exodia-website/quickstart/install\"|' \
+        -e 's|^SUPPORT_URL=.*$|SUPPORT_URL=\"https://github.com/Exodia-OS/exodia-predator-ISO"|' \
+        -e 's|^BUG_REPORT_URL=.*$|BUG_REPORT_URL=\"https://github.com/Exodia-OS/exodia-predator-ISO/issues"|' \
+        -e 's|^LOGO=.*$|LOGO=exodia|'
+
+    if [ -z "$(grep "^ID_LIKE=" $file)" ] && [ -n "$(grep "^ID=" $file)" ] ; then
+        # add missing ID_LIKE=
+        sed -i $file -e '/^ID=/a \ID_LIKE=arch'
+    fi
+
+	# fix issue file
+    sed -i 's|Arch Linux|Exodia Predator OS|g' /etc/issue /usr/share/factory/etc/issue
+}
+
+main()
+{
+    local hookname="$1"
+
+    case "$hookname" in
+        os-release)  fix_os_release ;;
+        lsb-release) fix_lsb_release ;;
+        "")          fix_os_release
+                     fix_lsb_release
+                     ;;
+    esac
+}
+
+main "$@"
