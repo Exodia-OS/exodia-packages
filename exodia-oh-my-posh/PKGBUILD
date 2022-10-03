@@ -1,0 +1,46 @@
+#
+# Maintainer: Mahmoud Mohamed (Ozil) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=exodia-oh-my-posh
+pkgver=1.0
+pkgrel=1
+pkgdesc="oh-my-posh for Exodia OS powershell-preview-bin"
+url="https://github.com/Exodia-OS/exodia-packages"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=('powershell-preview-bin')
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+
+	cp -af ../files/. ${srcdir}
+
+}
+
+package() {
+
+	# directories #
+	BIN_DIR=${pkgdir}/usr/local/bin
+	CONFIG_DIR=${pkgdir}/etc/skel/.config/powershell
+	THEMES_DIR=${pkgdir}/etc/skel/.poshthemes
+
+	# create directories #
+	mkdir -p "$BIN_DIR" "$CONFIG_DIR" "$THEMES_DIR"
+
+	# install oh-my-posh #
+	cp ${srcdir}/bin/oh-my-posh "$BIN_DIR"
+	chmod +x "$BIN_DIR"/oh-my-posh
+	
+	# install user profile config #
+	cp -r ${srcdir}/config/powershell/Microsoft.PowerShell_profile.ps1 "$CONFIG_DIR"
+
+	oh-my-posh
+	cp -r ${srcdir}/poshthemes/* "$THEMES_DIR"
+
+}
+
+
