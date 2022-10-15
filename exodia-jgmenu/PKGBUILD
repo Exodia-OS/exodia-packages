@@ -4,7 +4,7 @@
 
 pkgname=exodia-jgmenu
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="jgmenu config for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
@@ -17,15 +17,18 @@ options=(!strip !emptydirs)
 prepare() {
 
 	cp -af ../jgmenu/. ${srcdir}
+	cp -af ../MenuIcons ${srcdir}
 
 }
 
 package() {
 
 	CONFIG_DIR=${pkgdir}/etc/skel/.config/jgmenu
-	mkdir -p $CONFIG_DIR
+	ICONS_DIR=${pkgdir}/usr/share/exodia/jgmenu
+	mkdir -p $CONFIG_DIR $ICONS_DIR
 
 	cp -r ${srcdir}/* $CONFIG_DIR
+	cp -r ${srcdir}/MenuIcons $ICONS_DIR
 
 }
 
