@@ -44,7 +44,7 @@ fix_grub() {
 	
 	# Fix GRUB_DISTRIBUTOR for Exodia OS #
 
-	sed -i -e 's/GRUB_DISTRIBUTOR=.*/GRUB_DISTRIBUTOR="Exodia Predator OS"/g' /etc/default/grub
+	sed -i -e 's/GRUB_DISTRIBUTOR=.*/GRUB_DISTRIBUTOR="Exodia OS"/g' /etc/default/grub
 	cat /etc/grub.d/10_linux | grep 'OS="${GRUB_DISTRIBUTOR} Linux"' &>/dev/null
 	if [[ "$?" == 0 ]]; then
 		sed -i -e 's/OS="${GRUB_DISTRIBUTOR} Linux"/OS="${GRUB_DISTRIBUTOR}"/g' /etc/grub.d/10_linux

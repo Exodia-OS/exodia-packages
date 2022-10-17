@@ -1,7 +1,7 @@
 GRUB_DEFAULT=saved
 GRUB_TIMEOUT=10
 GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT
-GRUB_DISTRIBUTOR="Exodia"
+GRUB_DISTRIBUTOR="Exodia OS"
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=3 udev.log_level=3 vt.global_cursor_default=0"
 GRUB_CMDLINE_LINUX=""
 
