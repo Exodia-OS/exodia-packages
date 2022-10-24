@@ -1,0 +1,34 @@
+#
+# Maintainer: Mahmoud Mohamed (Ozil) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=python-pygame
+_pkgname=pygame
+pkgver=2.1.2
+pkgrel=1
+pkgdesc="Python game library"
+arch=('any')
+url="http://pygame.org/"
+license=('LGPL')
+depends=('python' 'libjpeg-turbo' 'sdl_ttf'
+         'sdl_image' 'sdl_mixer' 'portmidi')
+makedepends=('git' 'python-setuptools')
+provides=('python-pygame')
+conflicts=('python-pygame')
+source=("https://codeload.github.com/pygame/pygame/tar.gz/refs/tags/$pkgver")
+md5sums=('SKIP')
+
+
+build() {
+  
+  cd $_pkgname-$pkgver
+  python setup.py build
+}
+
+package() {
+
+  cd $_pkgname-$pkgver
+  python setup.py install --prefix=/usr \
+                          --root="$pkgdir/"
+                          
+}
