@@ -1,0 +1,32 @@
+#
+# Maintainer: Mahmoud Mohamed (Ozil) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=ascii-image-converter
+pkgver=1.12.0
+pkgrel=1
+pkgdesc="A cross-platform command-line tool to convert images into ascii art and print them on the console."
+arch=('any')
+url="https://github.com/TheZoraiz/ascii-image-converter"
+license=('custom:ApacheV2')
+makedepends=('go')
+conflicts=('ascii-image-converter-git')
+
+source=("https://codeload.github.com/TheZoraiz/ascii-image-converter/tar.gz/refs/tags/v$pkgver")
+md5sums=('SKIP')
+
+
+build() {
+
+  cd ${srcdir}/${pkgname}-${pkgver}
+  go build
+
+}
+
+package() {
+
+  cd ${srcdir}/${pkgname}-${pkgver}
+  install -Dm 755 ./ascii-image-converter -t "$pkgdir/usr/bin/"
+  install -Dm 644 ./LICENSE.txt -t "$pkgdir/usr/share/licenses/ascii-image-converter/"
+
+}
