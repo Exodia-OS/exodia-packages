@@ -22,7 +22,7 @@
 
 # Data
 _dir='/usr/share/exodia/help'
-# _dir='/home/ozil/Public/Temp/exodia-help/files/help'
+# _dir='/home/ozil/GitHub/Exodia-Repos/exodia-packages/exodia-help/files/help'
 _plug="$RANDOM"
 _dialog_cmd="--html --disable-search --browser --print-uri --uri-handler='firefox --new-tab %s'"
 _uri1="file://${_dir}/about.html"
