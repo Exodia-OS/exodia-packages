@@ -3,7 +3,7 @@
 #
 
 pkgname=exodia-grub-theme
-pkgver=2.0
+pkgver=2.1
 pkgrel=3
 pkgdesc="Default grub2 bootloader theme for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-packages"
