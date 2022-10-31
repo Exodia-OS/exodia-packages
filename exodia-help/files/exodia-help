@@ -27,7 +27,7 @@ _plug="$RANDOM"
 _dialog_cmd="--html --disable-search --browser --print-uri --uri-handler='firefox --new-tab %s'"
 _uri1="file://${_dir}/about.html"
 _uri2="file://${_dir}/bspwm.html"
-_uri3="file://${_dir}/team.html"
+_uri3="file://${_dir}/team/index.html"
 
 
 # About Dialog #

@@ -4,7 +4,7 @@
 
 pkgname=exodia-help
 pkgver=2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Help for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')

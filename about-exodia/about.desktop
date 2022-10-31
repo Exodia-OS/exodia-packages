@@ -2,6 +2,6 @@
 Name=About Exodia OS
 Comment=About Exodia OS
 Exec=about-exodia-os
-Icon=exodia
+Icon=exodia-magenta
 Type=Application
 Categories=System;

@@ -2,6 +2,6 @@
 Name=Welcome To Exodia OS
 Comment=Startup application for Exodia OS
 Exec=exodia-welcome
-Icon=exodia
+Icon=exodia-cyan
 Type=Application
 Categories=System;
