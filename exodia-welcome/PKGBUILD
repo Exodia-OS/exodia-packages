@@ -1,10 +1,10 @@
 #
-# Maintainer: Mahmoud Mohamed (Ozil) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
 #
 
 pkgname=exodia-welcome
 pkgver=1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Welcome app for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')

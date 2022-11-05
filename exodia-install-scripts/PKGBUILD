@@ -1,10 +1,10 @@
 #
-# Maintainer: Mahmoud Mohamed (Ozil) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
 #
 
 pkgname=exodia-install-scripts
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Exodia OS Install Scripts'
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
@@ -19,8 +19,8 @@ source=(
 
 sha512sums=(
 
-	'05b2272b27d16ccbd74f0bef598dec4b344aa3de1cecd7642cd3fc9082ff4c51c3c3725913f234c7eb8fdccecbb0addca4e4e2d0c195d21d1122a17de8697fa1'
-	'b1feefc92db389cde5ff24183198d0ea88908e31b4d9b6041dd5be275ad1aa00af18f58a0ad938dadb5552e4624cad42f3cc5f475c382b27651e3699c2d5183b'
+	'SKIP'
+	'SKIP'
 )
 
 package() {

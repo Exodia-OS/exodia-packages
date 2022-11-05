@@ -1,10 +1,10 @@
 #
-# Maintainer: Mahmoud Mohamed (Ozil) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
 #
 
 pkgname="exodia-hooks"
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Pacman hooks for Exodia OS to fix various system files'
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
@@ -25,17 +25,17 @@ source=(
 )
 
 sha512sums=(
-  '0351266057f097c4fbf5cfe5c3690bb5b28311933de95293a2fbda49a50a768aa43e9e60fc05c9c41b02510461bbbe77d68e256415262d5d2581b831c8354ce3'
-  '07dc3105ece60be776a5d4ddabd22f55a0a14d2b2b1157da6fff24f00878591c62997d22f67e54457274571be237c869f9ef886e1d5b963cec248889df4be690'
-  '1e63b15b8580a8b4db32fb1e6ac5f9d6ca4e830c73a71fa97a14810332d43d20b0b14aa05fd6c1f29468dd0442d55bd92435e2b3475b8419b3a4f8ceb0662634'
-  '3f1e2c8b494ecbd52fa384a9767cf8e670c5a3c05050d95ad71eff972082d8ae74a48bda428626f0bd263444c1243dea5960e30eaeda8538d65d5eb26ac848e5'
-  '4da6fed0c3b6b3136b2d1af14cb69e7e5af71baca6ac893b348b933cb09b78a9dceaf474b6a0bb8865cd9805b9a7c83841467dc144720492b652c736194f4cb9'
-  '981cb619d1c34a35ecad7b8e41fdd37b6e7d069034ff05b57661900d0eb60fc08030b7cb991a302118a7fea6e70f78774d53f86686e525a88069c249aa395774'
-  'a0847824129bd3d99533be5edd5d28763ff96290e8200fac0db0746b2aece6e068c3a4deba25c4b2b3a261214577b256f841ee0f2adc6aba1737bf322e7480d5'
-  '51792e4ed43c9487087db70cb02f4c78ab519dc741a2bb5d4ec776ddcdba8c1abb785ed96b8db85bfc3a274dea2320860af51a6bae5025ef59ecd252096b250d'
-  '04f8ad20566f3d608d91be064a3fe198379c0e4e2cf96c26144169d563e518c9b3acc3dfb75d4d17969624ef7404ec96bdcf75914e325f0d07665482728483db'
-  'ec9651b66aa443e2ac9e648b45a003eb28d92f5ba08b3c2e007fc92916c1dd5d55dde73a12b3378b13a2ecaba2110441730883614bf95c6583cd2b5b01bfcbad'
-  '7cd342fe6ff66f062bed48ec0e57ecf8b6354b3fd509d37504769b11b2d14824fd1cbb3bd9f1e21a958b785a6dec55441bcd1da7b6c8cdfbf2841f98e60081b3'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  'SKIP'
 )
 
 package() {
