@@ -1,0 +1,29 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=exodia-plymouth-theme
+pkgver=1.0
+pkgrel=1
+pkgdesc="Default plymouth theme for Exodia OS"
+url="https://github.com/Exodia-OS/exodia-packages"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=('plymouth')
+conflicts=()
+groups=(exodia-plymouth-themes)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+
+	cp -af ../files/. ${srcdir}
+
+}
+
+package() {
+
+	(find exodia -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/plymouth/themes/{}" \;)
+
+}
