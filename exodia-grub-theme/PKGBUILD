@@ -4,7 +4,7 @@
 
 pkgname=exodia-grub-theme
 pkgver=2.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Default grub2 bootloader theme for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
@@ -24,7 +24,7 @@ prepare() {
 package() {
 	
 	(find exodia -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/grub/themes/{}" \;)
-	(find exodia -type f -exec install -Dm 644 "{}" "$pkgdir/boot/grub/themes/{}" \;)
+	# (find exodia -type f -exec install -Dm 644 "{}" "$pkgdir/boot/grub/themes/{}" \;)
 
 }
 
