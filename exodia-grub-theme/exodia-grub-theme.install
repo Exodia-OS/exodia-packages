@@ -29,8 +29,8 @@ post_install() {
 	echo -e ${Blue}"\n[*] Copying ${BBlue}${PKG_NAME}${Blue} Files into ${BBlue}${BOOT_DIR}" ${Color_Off}
 	cp -r ${THEME_DIR}/${FILES_NAME} ${BOOT_DIR}/
 
-	echo -e ${Blue}"\n[*] Updating ${BBlue}Grub" ${Color_Off}
-	sudo grub-mkconfig -o /boot/grub/grub.cfg
+	# echo -e ${Blue}"\n[*] Updating ${BBlue}Grub" ${Color_Off}
+	# sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 	echo -e ${BGreen}"[*] GRUB Theme installed successfully!\n" ${Color_Off}
 
