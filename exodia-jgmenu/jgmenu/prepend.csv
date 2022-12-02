@@ -3,6 +3,8 @@
 
 Terminal,bspterm -float,/usr/share/exodia/jgmenu/MenuIcons/terminal.png
 
+PowerShell,bsp-powershell,/usr/share/exodia/jgmenu/MenuIcons/PowerShell.png
+
 Web Browser,google-chrome-stable,/usr/share/exodia/jgmenu/MenuIcons/web-browser.png
 
 File manager,thunar,/usr/share/exodia/jgmenu/MenuIcons/file-manager.png

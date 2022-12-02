@@ -4,7 +4,7 @@
 
 pkgname=exodia-jgmenu
 pkgver=1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="jgmenu config for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
