@@ -4,7 +4,7 @@
 
 pkgname=exodia-pixmaps
 pkgver=1.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Icons & logo for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
@@ -21,8 +21,9 @@ prepare() {
 }
 
 package() {
+
 	(find pixmaps -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/{}" \;)
-	(find dunst -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/icons/{}" \;)
+
 }
 
 
