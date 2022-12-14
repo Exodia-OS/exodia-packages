@@ -30,6 +30,12 @@ BACKUP_DIR="/home/${USER}/.exodia-backups"
 PKG_NAME='exodia-templates'
 FILES_NAME='Templates'
 
+pre_install() {
+
+	echo -e ${BGreen}"[*] Removing old Templates files \n" ${Color_Off}
+	rm -rf ${SKEL_DIR}/${FILES_NAME}
+}
+
 ## ------------ INSTALL CONFIG FILES ------------ ##
 
 # BACKUP FUNCTION #
