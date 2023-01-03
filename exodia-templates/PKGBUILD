@@ -4,7 +4,7 @@
 
 pkgname=exodia-templates
 _pkgname=Templates
-pkgver=1.0
+pkgver=1.2
 pkgrel=6
 pkgdesc="Templates Files For Exodia OS that helps you create coding files"
 arch=('any')
