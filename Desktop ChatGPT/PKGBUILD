@@ -1,0 +1,40 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=ChatGPT-bin
+_pkgname=ChatGPT
+pkgver=0.7.4
+pkgrel=1
+pkgdesc="ChatGPT Desktop Application (Mac, Windows and Linux)"
+arch=('any')
+url="https://github.com/lencx/ChatGPT"
+license=('Apache-2.0')
+depends=(
+	'rust'
+	'yarn'
+	)
+makedepends=('git')
+source=("${url}/archive/refs/tags/v${pkgver}.tar.gz")
+md5sums=('SKIP')
+
+build() {
+
+	cd "${srcdir}/${_pkgname}-${pkgver}"
+	cd src-tauri
+	jq '.tauri.bundle.active = false' tauri.conf.json > output.json
+	rm tauri.conf.json
+	mv output.json tauri.conf.json
+	cd ..
+	# yarn
+	# yarn build
+	
+}
+
+
+package() {
+
+	mkdir -p ${pkgdir}/usr/bin
+	cp ${srcdir}/${_pkgname}-${pkgver}/src-tauri/target/release/chat-gpt ${pkgdir}/usr/bin
+
+}
