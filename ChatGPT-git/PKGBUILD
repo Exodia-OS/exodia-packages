@@ -5,7 +5,7 @@
 BIN_PKG=chat-gpt
 pkgname=ChatGPT-git
 _pkgname=ChatGPT
-pkgver=r369.6d950c0
+pkgver=r447.c293f07
 pkgrel=1
 pkgdesc="ChatGPT Desktop Application (Mac, Windows and Linux)"
 arch=('any')
@@ -61,7 +61,6 @@ package() {
 	mkdir -p ${pkgdir}/usr/share/pixmaps
 	cp ${srcdir}/ChatGPT.png ${pkgdir}/usr/share/pixmaps/
 	
-	install -Dm0755 -t "${pkgdir}/usr/bin/" "${srcdir}/${_pkgname}/src-tauri/target/release/${BIN_PKG}"
+	install -Dm0755 -t "${pkgdir}/usr/bin/" "${srcdir}/${_pkgname}/target/release/${BIN_PKG}"
 	
-
 }
