@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Type=Application
+Version=0.7.4
+Name=ChatGPT
+Comment=ChatGPT Desktop Application For Mac, Windows and Linux
+Exec=/usr/bin/chat-gpt
+Icon=ChatGPT
+Terminal=false
+Categories=Education

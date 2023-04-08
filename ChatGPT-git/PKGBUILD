@@ -5,7 +5,7 @@
 BIN_PKG=chat-gpt
 pkgname=ChatGPT-git
 _pkgname=ChatGPT
-pkgver=r447.c293f07
+pkgver=r566.73d3b14
 pkgrel=1
 pkgdesc="ChatGPT Desktop Application (Mac, Windows and Linux)"
 arch=('any')
