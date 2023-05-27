@@ -24,18 +24,6 @@ THEME_DIR="/usr/share/grub/themes"
 PKG_NAME="exodia-grub-theme"
 FILES_NAME="exodia"
 
-post_install() {
-	
-	echo -e ${Blue}"\n[*] Copying ${BBlue}${PKG_NAME}${Blue} Files into ${BBlue}${BOOT_DIR}" ${Color_Off}
-	cp -r ${THEME_DIR}/${FILES_NAME} ${BOOT_DIR}/
-
-	# echo -e ${Blue}"\n[*] Updating ${BBlue}Grub" ${Color_Off}
-	# sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-	echo -e ${BGreen}"[*] GRUB Theme installed successfully!\n" ${Color_Off}
-
-}
-
 post_upgrade() {
 	
 	echo -e ${Blue}"\n[*] Updating ${BBlue}GRUB Theme Files into ${BBlue}${BOOT_DIR}" ${Color_Off}
