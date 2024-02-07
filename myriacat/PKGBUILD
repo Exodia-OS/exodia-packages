@@ -1,0 +1,32 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=myriacat
+pkgver=1.2
+pkgrel=1
+pkgdesc='Linux audio spectrum analyzer with VLF SDR'
+arch=('any')
+url='https://github.com/myriacat/myriacat'
+license=('custom')
+depends=()
+source=(
+  "${url}/releases/download/v${pkgver}/${pkgname}_${pkgver}.tar.gz"
+  "myriacat.png"
+	"myriacat.desktop"
+  )
+sha512sums=(
+  'SKIP'
+  'SKIP'
+  'SKIP'
+  )
+
+package() {
+
+    install -Dm 644 ${srcdir}/myriacat.desktop	  ${pkgdir}/usr/share/applications/myriacat.desktop
+    install -Dm 644 ${srcdir}/myriacat.png        ${pkgdir}/usr/share/pixmaps/myriacat.png
+    install -Dm 755 ${srcdir}/myriacat            ${pkgdir}/usr/bin/myriacat
+    install -Dm 644 ${srcdir}/LICENSE.txt         ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+    
+
+}
