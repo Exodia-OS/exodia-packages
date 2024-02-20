@@ -4,7 +4,7 @@
 
 pkgname=exodia-plymouth-theme
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Default plymouth theme for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
