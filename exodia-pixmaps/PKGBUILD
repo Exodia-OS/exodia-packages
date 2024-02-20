@@ -4,7 +4,7 @@
 
 pkgname=exodia-pixmaps
 pkgver=1.0
-pkgrel=6
+pkgrel=7
 pkgdesc="Icons & logo for Exodia OS"
 url="https://github.com/Exodia-OS/exodia-packages"
 arch=('any')
