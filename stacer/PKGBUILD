@@ -2,9 +2,10 @@
 # Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
 #
 
-pkgname=Stacer
+_pkgname=Stacer
+pkgname=stacer
 pkgver=1.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Linux System Optimizer and Monitoring"
 arch=('any')
 url="https://github.com/oguzhaninan/Stacer"
@@ -17,7 +18,7 @@ conflicts=('stacer' 'stacer-git')
 
 build() {
 
-       cd  "${srcdir}/${pkgname}-${pkgver}"
+       cd  "${srcdir}/${_pkgname}-${pkgver}"
        mkdir build && cd build
        cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/qt/path/bin ..
        make -j $(nproc)
@@ -25,7 +26,7 @@ build() {
 
 package() {
        
-       cd  "${srcdir}/${pkgname}-${pkgver}"
+       cd  "${srcdir}/${_pkgname}-${pkgver}"
        install -Dm755 build/output/stacer  ${pkgdir}/usr/bin/stacer
        install -Dm 644 applications/stacer.desktop ${pkgdir}/usr/share/applications/stacer.desktop
        install -Dm 644 icons/hicolor/256x256/apps/stacer.png  ${pkgdir}/usr/share/pixmaps/stacer.png
