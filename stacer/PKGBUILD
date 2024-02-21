@@ -1,0 +1,36 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=Stacer
+pkgver=1.1.0
+pkgrel=1
+pkgdesc="Linux System Optimizer and Monitoring"
+arch=('any')
+url="https://github.com/oguzhaninan/Stacer"
+license=('GPL3')
+depends=('qt5-charts' 'qt5-svg' 'hicolor-icon-theme')
+source=("${url}/archive/refs/tags/v${pkgver}.tar.gz")
+sha512sums=('SKIP')
+options=('!strip')
+conflicts=('stacer' 'stacer-git')
+
+build() {
+
+       cd  "${srcdir}/${pkgname}-${pkgver}"
+       mkdir build && cd build
+       cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/qt/path/bin ..
+       make -j $(nproc)
+}
+
+package() {
+       
+       cd  "${srcdir}/${pkgname}-${pkgver}"
+       install -Dm755 build/output/stacer  ${pkgdir}/usr/bin/stacer
+       install -Dm 644 applications/stacer.desktop ${pkgdir}/usr/share/applications/stacer.desktop
+       install -Dm 644 icons/hicolor/256x256/apps/stacer.png  ${pkgdir}/usr/share/pixmaps/stacer.png
+       mkdir -p ${pkgdir}/usr/lib/stacer
+       install -Dm 644 build/output/lib/libstacer-core.a ${pkgdir}/usr/lib/stacer
+       cp -r translations ${pkgdir}/usr/lib/stacer
+       
+}
