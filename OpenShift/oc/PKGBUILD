@@ -1,0 +1,36 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=oc
+pkgver=latest
+pkgrel=1
+pkgdesc="OpenShift command-line interface (oc)"
+arch=('any')
+url="https://console.redhat.com/openshift/downloads#tool-oc"
+license=('Apache')
+source=("openshift-client-linux.tar.gz")
+sha256sums=('SKIP') # Replace with actual sha256sum for security
+
+package() {
+
+  cd "$srcdir"
+  
+  # If the tarball extracts to a directory, adjust the path accordingly
+  tar -xf openshift-client-linux.tar.gz
+
+  # Find the oc binary
+  if [[ -f oc ]];
+  	
+	then
+    
+		install -Dm755 oc "$pkgdir/usr/bin/oc"
+
+  else
+    
+	# If extracted to a directory, e.g., oc-linux-*-amd64/oc
+    find . -type f -name oc -exec install -Dm755 {} "$pkgdir/usr/bin/oc" \;
+
+  fi
+
+}
