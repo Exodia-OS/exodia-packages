@@ -1,0 +1,36 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=crc
+pkgver=latest
+pkgrel=1
+pkgdesc="CodeReady Containers (crc) - OpenShift local cluster"
+arch=('any')
+url="https://developers.redhat.com/products/codeready-containers/overview"
+license=('Apache')
+source=("crc-linux-amd64.tar.xz")
+sha256sums=('SKIP') # Replace with actual sha256sum for security
+
+package() {
+
+  cd "$srcdir"
+  
+  # If the tarball extracts to a directory, adjust the path accordingly
+  tar -xf crc-linux-amd64.tar.xz
+
+  # Find the crc binary
+  if [[ -f crc ]];
+  	
+	then
+    
+		install -Dm755 crc "$pkgdir/usr/bin/crc"
+
+  else
+    
+	# If extracted to a directory, e.g., crc-linux-*-amd64/crc
+    find . -type f -name crc -exec install -Dm755 {} "$pkgdir/usr/bin/crc" \;
+
+  fi
+
+}
