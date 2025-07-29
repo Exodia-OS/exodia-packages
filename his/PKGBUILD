@@ -1,0 +1,41 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=his-git
+_pkgname=his
+pkgver=e4e14cb
+pkgrel=1
+pkgdesc='A command history utility with icons and colors that works on Windows and GNU/Linux.'
+arch=('any')
+url='https://github.com/terroo/his'
+license=('GPL-3')
+depends=('cmake' 'gcc')
+  
+makedepends=('git')
+source=("git+${url}")
+md5sums=('SKIP')
+
+pkgver() {
+
+    cd ${_pkgname}
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)" 
+
+}
+
+build() {
+
+  cd "${srcdir}/${_pkgname}"
+
+  cmake . -B build
+  cmake --build build
+
+}
+
+package() {
+
+  cd "${srcdir}/${_pkgname}"
+
+  install -Dm 755  "${srcdir}/${_pkgname}/build/his" "${pkgdir}/usr/local/bin/his"
+  
+}
